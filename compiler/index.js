@@ -9,7 +9,13 @@ fs.readFile("..test/test.lw", "utf-8", function(error, content) {
 
     if (currentString !== "") {
       let words = currentString.split(" ");
-      console.log(words);
+      let stringObject = {};
+
+      for (let j = 0; j < words.length; j++) {
+        if (words[j].toLowerCase() === "print") {
+          stringObject["id"] = "print";
+        }
+      }
     }
   }
 });
