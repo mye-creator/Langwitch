@@ -8,7 +8,8 @@ fs.readFile("..test/test.lw", "utf-8", function(error, content) {
     let currentString = strings[i].trim();
 
     if (currentString !== "") {
-      console.log(currentString)
+      let words = currentString.split(" ");
+      console.log(words);
     }
   }
 });
