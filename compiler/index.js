@@ -5,6 +5,10 @@ fs.readFile("test/test.lw", "utf-8", function(error, content) {
   let strings = text.split(';');
 
   for (let i = 0; i < strings.length; i++) {
-    let currentStrings = strings[i].trim();
+    let currentString = strings[i].trim();
+
+    if (currentString !== "") {
+      console.log(currentString)
+    }
   }
 });
