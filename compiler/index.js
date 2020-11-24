@@ -1,6 +1,6 @@
 let fs = require("fs");
 
-fs.readFile("test/test.lw", "utf-8", function(error, content) {
+fs.readFile("..test/test.lw", "utf-8", function(error, content) {
   let text = content.replace(/\s\s+/gm, " ");
   let strings = text.split(';');
 
