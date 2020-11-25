@@ -22,12 +22,24 @@ let LEXER = function (content, dictionary) {
       }
       let value = copyString.replace(new RegExp(command + " : ", "g"), "");
       if (/\"(.")\"/gim.test(value)) {
-        // string
+        Object.assign(stringObject, {
+          "string": value
+        });
       } else {
-        // number or anything else
+        if (Number(value)) {
+          // number
+          if (Number(value) %-1 === 0) {
+            //int
+          } else {
+            //float
+          }
+        } else {
+          //anything else
+        }
       }
     }
   }
+
   // Our code here
 
   return lexems;
