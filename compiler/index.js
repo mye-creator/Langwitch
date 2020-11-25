@@ -1,5 +1,6 @@
 let fs = require("fs");
 
+let dictionary = require("./modules/dictionary.js")
 let lexer = require("./modules/lexer.js").LEXER;
 
 fs.readFile("../test/test.lw", "utf-8", function(error, content) {
@@ -11,6 +12,6 @@ fs.readFile("../test/test.lw", "utf-8", function(error, content) {
   } else {
 
     console.error("ERROR!!!")
-
+    console.error(error)
   }
 });
