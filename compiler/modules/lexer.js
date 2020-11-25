@@ -12,6 +12,8 @@ let LEXER = function (content, dictionary) {
       let words = currentString.split(" ");
       let copyString = currentString;
       let stringObject = {};
+
+      console.log(words)
     }
 
   }
