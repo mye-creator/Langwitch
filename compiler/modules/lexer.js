@@ -27,14 +27,23 @@ let LEXER = function (content, dictionary) {
         });
       } else {
         if (Number(value)) {
-          // number
+          //number
           if (Number(value) %-1 === 0) {
-            //int
+            //integer
+            Object.assign(stringObject, {
+              "integer": Number(value)
+            });
           } else {
             //float
+            Object.assign(stringObject, {
+              "float": Number(value)
+            });
           }
         } else {
           //anything else
+          Object.assign(stringObject, {
+            "undefined": Number(value)
+          });
         }
       }
     }
