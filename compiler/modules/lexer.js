@@ -14,13 +14,21 @@ let LEXER = function (content, dictionary) {
       let stringObject = {};
 
       let command = words[0];
+
+      if (dictionary["function"].indexOf(command.toLowerCase()) != -1) {
+        Object.assign(stringObject, {
+          "function": command
+        });
+      }
       let value = copyString.replace(new RegExp(command + " : ", "g"), "");
-
-      console.log("Command : " + command);
-      console.log("Value : " + value);
+      if (/\"(.")\"/gim.test(value)) {
+        // string
+      } else {
+        // number or anything else
+      }
     }
-
   }
+  // Our code here
 
   return lexems;
 };
