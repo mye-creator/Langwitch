@@ -10,6 +10,8 @@ let LEXER = function (content, dictionary) {
 
     if (currentString !== "") {
       let words = currentString.split(" ");
+      let copyString = currentString;
+      let stringObject = {};
     }
 
   }
