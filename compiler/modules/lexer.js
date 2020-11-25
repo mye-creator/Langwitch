@@ -5,7 +5,14 @@ let LEXER = function (content, dictionary) {
 
   let lexems = [];
 
-  // Our code here
+  for (let i = 0; i < strings.length; i++) {
+    let currentString = strings[i].trim();
+
+    if (currentString !== "") {
+      let words = currentString.split(" ");
+    }
+
+  }
 
   return lexems;
 };
