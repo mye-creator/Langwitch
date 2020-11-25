@@ -42,7 +42,7 @@ let LEXER = function (content, dictionary) {
         } else {
           //anything else
           Object.assign(stringObject, {
-            "undefined": Number(value)
+            "undefined": value
           });
         }
       }
