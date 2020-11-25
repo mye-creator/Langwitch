@@ -16,6 +16,18 @@ fs.readFile("../test/test.lw", "utf-8", function(error, content) {
       for (let j = 0; j < words.length; j++) {
         if (words[j].toLowerCase() === "print") {
           stringObject["id"] = "print";
+        } else if (words[j].toLowerCase() === ":") {
+          stringObject["operator"] = ":";
+        } else {
+          let copyString = currentString;
+
+          if (/PRINT : \((.*)\)/gim.test(copyString)) {
+            let str = copyString.replace(/PRINT : \((.*)\)/gim, '$1');
+            stringObject["string"] = str;
+          } else if (/PRINT : \((.*)\)/gim.test(copyString)) {
+            let num = copyString.replace(/PRINT : \((.*)\)/gim, '$1');
+            stringObject["number"] = num;
+          }
 
         }
 
