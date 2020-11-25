@@ -13,7 +13,11 @@ let LEXER = function (content, dictionary) {
       let copyString = currentString;
       let stringObject = {};
 
-      console.log(words)
+      let command = words[0];
+      let value = copyString.replace(new RegExp(command + " : ", "g"), "");
+
+      console.log("Command : " + command);
+      console.log("Value : " + value);
     }
 
   }
