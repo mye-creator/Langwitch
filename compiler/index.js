@@ -16,8 +16,15 @@ fs.readFile("../test/test.lw", "utf-8", function(error, content) {
       for (let j = 0; j < words.length; j++) {
         if (words[j].toLowerCase() === "print") {
           stringObject["id"] = "print";
+
         }
+
       }
+
+      lexems.push(stringObject);
+
     }
+
   }
+
 });
