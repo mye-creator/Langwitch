@@ -26,5 +26,5 @@ fs.readFile("../test/test.lw", "utf-8", function(error, content) {
     }
 
   }
-
+  console.log(lexems)
 });
