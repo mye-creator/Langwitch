@@ -1,6 +1,6 @@
 let fs = require("fs");
 
-let lever = require("./modules/lexer.js").LEXER;
+let lexer = require("./modules/lexer.js").LEXER;
 
 fs.readFile("../test/test.lw", "utf-8", function(error, content) {
   let text = content.replace(/\s\s+/gm, " ");
