@@ -46,6 +46,7 @@ let LEXER = function (content, dictionary) {
           });
         }
       }
+      lexems.push(stringObject);
     }
   }
 
