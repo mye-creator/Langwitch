@@ -19,40 +19,45 @@ let LEXER = function (content, dictionary) {
         Object.assign(stringObject, {
           "function": command
         });
-      }
-      let value = copyString.replace(new RegExp(command + " : ", "g"), "");
-      if (/\"(.")\"/gim.test(value)) {
-        Object.assign(stringObject, {
-          "string": value
-        });
-      } else {
-        if (Number(value)) {
-          //number
-          if (Number(value) %-1 === 0) {
-            //integer
-            Object.assign(stringObject, {
-              "integer": Number(value)
-            });
-          } else {
-            //float
-            Object.assign(stringObject, {
-              "float": Number(value)
-            });
-          }
-        } else {
-          //anything else
+
+        else {
           Object.assign(stringObject, {
-            "undefined": value
+            "undefined_function": command
           });
         }
+        let value = copyString.replace(new RegExp(command + " : ", "g"), "");
+        if (/\"(.")\"/gim.test(value)) {
+          Object.assign(stringObject, {
+            "string": value
+          });
+        } else {
+          if (Number(value)) {
+            //number
+            if (Number(value) %-1 === 0) {
+              //integer
+              Object.assign(stringObject, {
+                "integer": Number(value)
+              });
+            } else {
+              //float
+              Object.assign(stringObject, {
+                "float": Number(value)
+              });
+            }
+          } else {
+            //anything else
+            Object.assign(stringObject, {
+              "undefined": value
+            });
+          }
+        }
+        lexems.push(stringObject);
       }
-      lexems.push(stringObject);
     }
-  }
 
-  // Our code here
+    // Our code here
 
-  return lexems;
-};
+    return lexems;
+  };
 
-module.exports.LEXER = LEXER;
+  module.exports.LEXER = LEXER;
