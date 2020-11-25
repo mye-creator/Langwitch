@@ -1,6 +1,6 @@
 let DICTIONARY = {
-   "function" : [
-      "print"
-   ]
+  "function": [
+    "print"
+  ]
 };
 module.exports.DICTIONARY = DICTIONARY;
