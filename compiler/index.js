@@ -7,7 +7,10 @@ fs.readFile("../test/test.lw", "utf-8", function(error, content) {
     let lexems = lexems(content)
 
     console.log(JSON.stringify(lexems, null, 4));
+
   } else {
+
     console.error("ERROR!!!")
+
   }
 });
