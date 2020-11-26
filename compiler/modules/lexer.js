@@ -53,6 +53,15 @@ let LEXER = function (content, dictionary) {
                     "value": Number(value)
                   }
                 });
+              } else {
+                // We can't work with very big numbers
+                Object.assign(stringObject, {
+                  "value": {
+                    "type": "integer",
+                    "subtype": "infinity",
+                    "value": Number(value)
+                  }
+                });
               }
             }
           } else {
