@@ -45,23 +45,31 @@ let LEXER = function (content, dictionary) {
                 }
               });
             } else {
-              //float
               Object.assign(stringObject, {
                 "value": {
-                  "type": "float",
+                  "type": "integer",
+                  "subtype": "logint",
                   "value": Number(value)
                 }
               });
             }
           } else {
-            //anything else
+            //float
             Object.assign(stringObject, {
               "value": {
-                "type": "undefined",
-                "value": "value"
+                "type": "float",
+                "value": Number(value)
               }
             });
           }
+        } else {
+          //anything else
+          Object.assign(stringObject, {
+            "value": {
+              "type": "undefined",
+              "value": value
+            }
+          })
         }
         lexems.push(stringObject);
       }
