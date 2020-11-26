@@ -45,13 +45,15 @@ let LEXER = function (content, dictionary) {
                 }
               });
             } else {
-              Object.assign(stringObject, {
-                "value": {
-                  "type": "integer",
-                  "subtype": "logint",
-                  "value": Number(value)
-                }
-              });
+              if (Number(value) -9223372036854775808 && Number(value) < 9223372036854775807) {
+                Object.assign(stringObject, {
+                  "value": {
+                    "type": "integer",
+                    "subtype": "logint",
+                    "value": Number(value)
+                  }
+                });
+              }
             }
           } else {
             //float
