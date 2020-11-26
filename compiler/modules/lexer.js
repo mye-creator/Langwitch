@@ -15,7 +15,7 @@ let LEXER = function (content, dictionary) {
 
       let command = words[0];
 
-      if (dictionary["function"].indexOf(command.toLowerCase()) != -1) {
+      if (dictionary["function"].[(command.toLowerCase()]) {
         Object.assign(stringObject, {
           "function": command
         });
