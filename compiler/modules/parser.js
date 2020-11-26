@@ -5,7 +5,7 @@ function parser (lexems, dictionary) {
          let valueObj = lexems[i]["value"];
          
          if (dictionary["function"][functionName.toLowerCase()]) {
-            (dictionary["function"][functionName.toLowerCase()]()
+            let currentFunction = (dictionary["function"][functionName.toLowerCase()]();
          }
          else {
             console.error("function \""+functionName+"\" isn't registered!");
