@@ -69,13 +69,13 @@ let LEXER = function (content, dictionary) {
               "type": "undefined",
               "value": value
             }
-          })
+          });
         }
         lexems.push(stringObject);
       }
     }
 
-    // Our code here
+    //There is should be other code, but I need to think about it
 
     return lexems;
   };
