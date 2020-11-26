@@ -36,7 +36,7 @@ let LEXER = function (content, dictionary) {
         } else {
           if (Number(value)) {
             //number
-            if (Number(value) %-1 === 0) {
+            if (Number(value) > -2147483648 && Number(value) < 2147483647) {
               //int
               Object.assign(stringObject, {
                 "value": {
