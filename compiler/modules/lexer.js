@@ -19,35 +19,47 @@ let LEXER = function (content, dictionary) {
         Object.assign(stringObject, {
           "function": command
         });
-
         else {
           Object.assign(stringObject, {
             "undefined_function": command
           });
         }
         let value = copyString.replace(new RegExp(command + " : ", "g"), "");
+
         if (/\"(.")\"/gim.test(value)) {
           Object.assign(stringObject, {
-            "string": value
+            "value": {
+              "type": "string",
+              "value": value
+            }
           });
         } else {
           if (Number(value)) {
             //number
             if (Number(value) %-1 === 0) {
-              //integer
+              //int
               Object.assign(stringObject, {
-                "integer": Number(value)
+                "value": {
+                  "type": "integer",
+                  "value": Number(value),
+                }
               });
             } else {
               //float
               Object.assign(stringObject, {
-                "float": Number(value)
+                "value": {
+                  "type": "float",
+                  "value": Number(value)
+                }
               });
             }
           } else {
             //anything else
             Object.assign(stringObject, {
-              "undefined": value
+              "value": {
+                "type": "undefined",
+                "value": "value"
+              }
             });
           }
         }
