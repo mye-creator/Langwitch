@@ -18,7 +18,7 @@ let DICTIONARY = {
           return;
        }
        
-       return `printf(${type}, ${el.value});`;
+       return `printf(${type}, ${el.value});\n`;
     }
   }
 };
