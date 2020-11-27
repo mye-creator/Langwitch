@@ -1,11 +1,11 @@
 function parser (lexems, dictionary) {
    if (lexems && lexems.length !== 0) {
       for (let i = 0; i < lexems.length; i++) {
-         let functionName = lexems[i]["function"];
-         let valueObj = lexems[i]["value"];
+         let functionName = lexems[i]["function"]["function"] ? lexems[i]["function"] : lexems[i]["undefined_function"];
+         let valueObj = lexems[i]["value"] = dictionary["function"][functionName.toLowerCase()];
+         
          if (lexems[i]["function"] && dictionary["function"][functionName.toLowerCase()]) {
-            let currentFunction = dictionary["function"][functionName.toLowerCase()];
-            
+            let curretnFunction = dictionary["function"][functionName.toLowerCase()];
             
             currentFunction(valueObj.value);
          }
