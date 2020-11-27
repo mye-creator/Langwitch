@@ -5,7 +5,12 @@ let DICTIONARY = {
       
        if (el.type === "char") type += "c";
        else if (el.type === "string") type += "s";
-       else if (el.type === "integer") type += "d";
+       else if (el.type === "integer") {
+          if (el.subtype) === "infinity") {
+             console.error("Too big number!");
+             return;
+          }
+       }
        else if (el.type === "float") type += "f";
        else if (el.type === "undefined") type += "s";
        else {
