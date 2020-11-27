@@ -3,16 +3,16 @@ function parser (lexems, dictionary) {
       for (let i = 0; i < lexems.length; i++) {
          let functionName = lexems[i]["function"];
          let valueObj = lexems[i]["value"];
-         
-         if (dictionary["function"][functionName.toLowerCase()]) {
-            let currentFunction = (dictionary["function"][functionName.toLowerCase()];
+         if (lexems[i]["function"] && dictionary["function"][functionName.toLowerCase()]) {
+            let currentFunction = dictionary["function"][functionName.toLowerCase()];
+            
+            
             currentFunction(valueObj.value);
          }
          else {
             console.error("function \""+functionName+"\" isn't registered!");
          }
       }
-   }
    else {
       console.error("Array of lexems is empty");
    }
