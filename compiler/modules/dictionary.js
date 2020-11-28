@@ -1,3 +1,5 @@
+let Type = require("./utils/type.js").TYPE;
+
 let DICTIONARY = {
   "function" : {
     print : function (type, val) {
@@ -7,7 +9,7 @@ let DICTIONARY = {
        if (type === "int" || type === "float") {
           parsedValue = eval(parsedValue);
          
-          if (typeof parsedValue !== type) {
+          if (Type(parsedValue) !== type) {
              console.error("Type Error : " + typeof parsedValue + " !== " + type);
              return;
           }
