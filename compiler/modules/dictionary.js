@@ -3,7 +3,9 @@ let Eval = require("./utils/eval.js").EVAL;
 
 let DICTIONARY = {
   "function" : {
-    print : function (type, val) {
+    print : function (fullValue) {
+       let obj = splitValue(fullValue, DICTIONARY["types"]);
+
        let typeSymbol = "%";
        let parsedValue = Eval(val);
 
