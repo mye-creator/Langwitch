@@ -13,7 +13,7 @@ let DICTIONARY = {
           return;
        }
        
-       return `printf(${typeSymbol}, ${val});\n`;
+       return `printf(${typeSymbol},${val});\n`;
 
     }
 
