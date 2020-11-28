@@ -1,24 +1,40 @@
 let Type = function (variable) {
-  if (typeof variable === "number") {
-    if (variable % 1 === 0) {
-      return "int";
-    }
-    else {
-      return "float";
-    }
+  if (typeof variable === "object" || typeof variable === "boolean" || typeof variable === "function" || typeof variable === "null" || typeof variable === "unedfined") {
+     console.error("Error! Unknown data type!");
+     return;
   }
-  else if (typeof variable === "string") {
-    if (variable.length === 1) {
-      return "char";
+  else {
+    if (variable.match && variable.match(/\".+?\"/gm) !== null) {
+       if (variable.match(/\".+?\"/gm).length % 2 === 0) {
+          if (variable.match(/\".+?\"/gm).length === 1) {
+             if (variable.match(/\".+?\"/gm)[0].length === 1) {
+                return "char";
+             }
+             else {
+                return "string";
+             }
+
+        }
+       else {
+         console.error("Error! In one line there are more than 1 string declaration!");
+         return;
+       }
     }
     else {
-      return "string";
+      console.error("Error! Incorrect string declaration!");
+      return;
     }
   }
   else {
-    console.error("Incorrect type : " + typeof variable);
-    return;
+    if (Number(variable) % 1 === 0) {
+       return "int";
+    }
+    else {
+       return "float";
+    }
   }
-};
+}
+
+}
 
 module.exports.TYPE = Type;
