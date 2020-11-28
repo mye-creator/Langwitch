@@ -11,7 +11,7 @@ let LEXER = function (content, dictionary) {
     if (currentString !== "" && currentString[0] !== "##") {
       let parts = currentString.split(":");
       
-      let command = partss[0].trim();
+      let command = parts[0].trim();
       let fullValue = parts[1].trim();
       let type = null;
       let value = null;
@@ -43,7 +43,7 @@ let LEXER = function (content, dictionary) {
           console.error("You need to set up type of your value!");
       }
 
-        lexems.push(obj);
+      lexems.push(obj);
 
       }
 
