@@ -1,1 +1,4 @@
-PRINT : (int)100;
+var : (int) age = 15;
+
+print : (string) "hello";
+print : (char) "x";
