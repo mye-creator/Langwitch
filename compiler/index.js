@@ -6,9 +6,12 @@ let parser = require("./modules/parser/main.js").PARSER;
 
 fs.readFile("../test/test.lw", "utf-8", function(error, content) {
   if (error === null) {
-    let parsedString = lexems(content, dictionary);
+  	let lexems = lexer(content, dictionary);
+
+    let parsedString = parser(content, dictionary);
     
-    parser(lexems, dictionary);
+    console.log(parsedString);
+    
     // console.log(JSON.stringify(lexems, null, 4));
 
   } else {
