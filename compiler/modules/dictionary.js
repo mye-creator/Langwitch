@@ -1,5 +1,6 @@
 let Type = require("./utils/type.js").TYPE;
 let Eval = require("./utils/eval.js").EVAL;
+let splitValue = require(".utils/splitValue.js").splitValue;
 
 let DICTIONARY = {
   "function" : {
