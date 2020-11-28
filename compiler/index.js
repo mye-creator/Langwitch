@@ -1,8 +1,8 @@
 let fs = require("fs");
 
 let dictionary = require("./modules/dictionary.js").DICTIONARY;
-let lexer = require("./modules/lexer.js").LEXER;
-let parser = require("./modules/parser.js").PARSER;
+let lexer = require("./modules/lexer/main.js").LEXER;
+let parser = require("./modules/parser/main.js").PARSER;
 
 fs.readFile("../test/test.lw", "utf-8", function(error, content) {
   if (error === null) {
