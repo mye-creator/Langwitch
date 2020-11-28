@@ -13,35 +13,20 @@ let LEXER = function (content, dictionary) {
       
       let command = parts[0].trim();
       let fullValue = parts[1].trim();
-      let type = null;
-      let value = null;
 
       let obj = {};
 
       if (/\((.*?)\)/g.test(fullValue)) {
-          type = fullValue.match(/\((.*?)\)/g)[0].slice(1, -1); // "(int)"
-          value = fullValue.replace(new RegExp("\\("+type+"\\)", "g", "")); // 100
-
-          if (dictionary["function"][command.toLowerCase()]) {
-            if (dictionary["types"].indexOf(type) !== -1) {
-              Object.assign(obj, { 
-                  "function" : command,
-                  "type" : type,
-                  "value" : value });
-            }
-            else {
-               console.error(`Unknown type : "${type}"`);
-            }
-          }
-          else {
-             // undefined_function
-             console.error(`Unknown function: "${command}"`);
-          }
-
+         Object.assign(obj, { 
+            "function" : command,
+            "value" : fullValue
+         });
       }
-      else {
-          console.error("You need to set up type of your value!");
-      }
+       else {
+         // undefined_function
+         console.error(`Unknown function: "${command}"`);
+         return;
+       }
 
       lexems.push(obj);
 
@@ -55,3 +40,33 @@ let LEXER = function (content, dictionary) {
   };
 
   module.exports.LEXER = LEXER;
+
+/*
+  if (/\((.*?)\)/g.test(fullValue)) {
+          type = fullValue.match(/\((.*?)\)/g)[0].slice(1, -1); // "(int)"
+          value = fullValue.replace(new RegExp("\\("+type+"\\)", "g", "")); // 100
+
+          if (dictionary["function"][command.toLowerCase()]) {
+            if (dictionary["types"].indexOf(type) !== -1) {
+              Object.assign(obj, { 
+                  "function" : command,
+                  "type" : type,
+                  "value" : value });
+            }
+            else {
+               console.error(`Unknown type : "${type}"`);
+               return;
+            }
+          }
+          else {
+             // undefined_function
+             console.error(`Unknown function: "${command}"`);
+             return;
+          }
+
+      }
+      else {
+          console.error("You need to set up type of your value!");
+          return;
+      }
+*/
