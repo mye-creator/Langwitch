@@ -1,1 +1,1 @@
-PRINT =         100;
+PRINT : (int)100;
