@@ -20,7 +20,7 @@ let LEXER = function (content, dictionary) {
 
       if (/\((.*?)\)/g.test(fullValue)) {
           type = fullValue.match(/\((.*?)\)/g)[0].slice(1, -1); // "(int)"
-          value = fullValue.replace(new RegExp("\\("+type+"\\)", "g", ""); // 100
+          value = fullValue.replace(new RegExp("\\("+type+"\\)", "g", "")); // 100
 
           if (dictionary["function"][command.toLowerCase()]) {
             if (dictionary["types"].indexOf(type) !== -1) {
