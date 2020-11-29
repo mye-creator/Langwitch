@@ -1,4 +1,0 @@
-var : (int) age = 15;
-
-print : (string) "hello";
-print : (char) "x";
