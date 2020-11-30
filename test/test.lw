@@ -1,4 +1,4 @@
-var : (int) age = 15;
+var : (int) old = 15;
 
-print : (string) "hello";
-print : (char) "x";
+print : (string) "Variable old created!";
+print : old;
