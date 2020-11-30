@@ -13,7 +13,7 @@ let splitValue = function (fullValue, types) {
 				};
 			}
 			else {
-				console.error("Value cant be empty!");
+				console.error("Value can't be empty!");
 				return;
 			}
 		}
