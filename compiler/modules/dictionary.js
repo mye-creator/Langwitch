@@ -15,7 +15,7 @@ let DICTIONARY = {
 			let parsedValue = Eval(val);
 
 			if (Type.convert(parsedValue) !== type) {
-				console.error("Type error : " + typeof parsedValue + " !== " + type);
+				console.error("Type Error : " + typeof parsedValue + " !== " + type);
 				return;
 			}
 
@@ -39,7 +39,7 @@ let DICTIONARY = {
 			let val = obj.val;
 
 			if (val.match(/\=/gm).length !== 1) {
-				console.error("Unknown syntax: " + val);
+				console.error("Unknown Syntax: " + val);
 				return;
 			}
 			else {
@@ -47,7 +47,7 @@ let DICTIONARY = {
 				let varValue = val.split("=")[1].trim();
 
 				if (Type.convert(varValue) !== type) {
-					console.error("Type error : " + typeof parsedValue + " !== " + type);
+					console.error("Type Error : " + typeof parsedValue + " !== " + type);
 					return;
 				}
 				else {
