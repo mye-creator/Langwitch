@@ -1,0 +1,4 @@
+## You can use variables, math operations and print function
+## (string, integer, char, float)
+var (int) age : 15;
+print : (int) age;

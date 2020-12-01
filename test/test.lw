@@ -1,4 +1,0 @@
-var : (int) old = 15;
-
-print : (string) "Variable old created!";
-print : old;
