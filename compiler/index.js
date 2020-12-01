@@ -6,7 +6,7 @@ let parser = require("./modules/parser/main.js").PARSER;
 
 global.vars = [];
 
-fs.readFile("../test.lw", "utf-8", function (error, content) {
+fs.readFile("../main.lw", "utf-8", function (error, content) {
 
 	if (error === null) {
 		let lexems = lexer(content, dictionary);
