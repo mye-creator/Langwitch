@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html>
   <head>
-  	<title>Langwitch | Contact</title>
+  	<title>Langwitch</title>
   	<link rel="stylesheet" href="style.css">
   	<link rel="icon" href="img/icon.jpg">
   	<meta name="theme-color" content="#aeaeae">
@@ -15,6 +16,30 @@
       <a href="howto.html">How To</a>
       <a href="releases.html">Releases</a>
       <a class="active" href="contact.html">Contact</a>
+    </div>
+    <div class="form">
+    <form name="contact" netlify data-netlify-recaptcha="true">
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="firstname" required>
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lastname" required>
+      <label for="country">Country</label>
+      <select id="country" name="country">
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+        <option value="uk">United Kingdom</option>
+      </select>
+      <label for="subject">Subject</label>
+      <textarea id="subject" name="subject" style="height:200px" required></textarea>
+      <div data-netlify-recaptcha="true" style="align-items: center; padding-bottom: 5px;"></div>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+    <div class="footer">
+      <br>
+      <p>All rights reversed</p>
+      <p style="color: #adadad; font-size: 60%">Daniel Mye, 2020</p>
     </div>
   </body>
 </html>
