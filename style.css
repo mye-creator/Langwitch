@@ -69,3 +69,45 @@ a {
   margin: 0;
   color: white;
 }
+pre, code {
+  font-size: 110%;
+}
+input[type=text], select, textarea {
+  width: 100%; 
+  padding: 12px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px; 
+  margin-bottom: 16px; 
+  resize: vertical;
+}
+
+input:invalid:required {
+  border: 1px dashed red;
+}
+
+/* Style button */
+input[type=submit] {
+  background-color: #aeaeae;
+  color: #333;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+
+/* When moving the mouse over the submit button, add a darker black color */
+input[type=submit]:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Add a background color and some padding around the form */
+.form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
