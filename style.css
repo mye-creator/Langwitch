@@ -7,6 +7,7 @@ body {
   background-color: #333;
   overflow: hidden;
   position: sticky; top: 0;
+  align-content: center;
 }
 .topnav a {
   float: left;
@@ -25,6 +26,7 @@ body {
   color: #333;
 }
 .button {
+  display: flex;
   flex-direction: column;
   border-radius: 5px;
 }
